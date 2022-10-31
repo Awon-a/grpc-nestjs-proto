@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package auth;
+
+service AuthService {
+  rpc SignIn (SignInDto) returns SignInResponse {}
+  rpc SignUp (SignUpDto) return SignUpResponse {}
+  rpc ValidateToken (TokenDto) returns ValidateTokenResponse {}
+}
+
+message SignInDto {
+  string email = 1;
+  string password = 2;
+}
+
+message Tokens {
+  string at_token = 1;
+  string rt_token = 1;
+}
+
+message SignInResponse {
+  int32 status = 1;
+  string message = 2;
+  Tokens tokens = 3;
+}
+
+message SignUpDto {
+  string email = 1;
+  string password = 2;
+}
+
+message SignUpResponse {
+  int32 status = 1;
+  string message = 2;
+  Tokens tokens = 3;
+}
+
+message TokenDto {
+  string token = 1;
+}
+
+message ValidateTokenResponse {
+  int32 status = 1;
+  string message = 2;
+  string userId = 3;
+}
