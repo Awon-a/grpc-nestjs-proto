@@ -24,11 +24,19 @@ message FindOneResponse {
 
 message FindManyRequest {}
 
+message ItemFindMany {
+  string id = 1;
+  string email = 2;
+  string username = 3;
+  string lastName = 4;
+}
+
 message FindManyResponse {
   int32 status = 1;
   string message = 2;
   repeated ItemFindMany data = 3;
 }
+
 
 message UpdateOneRequest {
   string userId = 1;
