@@ -15,7 +15,7 @@ message SignInDto {
 
 message Tokens {
   string at_token = 1;
-  string rt_token = 1;
+  string rt_token = 2;
 }
 
 message SignInResponse {
