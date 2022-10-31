@@ -4,7 +4,7 @@ package auth;
 
 service AuthService {
   rpc SignIn (SignInDto) returns (SignInResponse) {}
-  rpc SignUp (SignUpDto) return (SignUpResponse) {}
+  rpc SignUp (SignUpDto) returns (SignUpResponse) {}
   rpc ValidateToken (TokenDto) returns (ValidateTokenResponse) {}
 }
 
