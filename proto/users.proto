@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package users;
+
+service UsersService {
+  rpc FindOne (FindOneRequest) returns (FindOneResponse) {}
+  rpc FindMany () returns (FindManyResponse) {}
+  rpc UpdateOne (UpdateOneRequest) returns (UpdateOneResponse) {}
+}
+
+message FindOneRequest {
+  string userId = 1;
+}
+
+message FindOneResponse {
+  int32 status = 1;
+  string id = 2;
+  string email = 3;
+  string username = 4;
+  string firstName = 5;
+  string lastName = 6;
+  string message = 7;
+}
+
+message FindManyResponse {
+  int32 status = 1;
+  string message = 2;
+  repeated ItemFindMany data = 3;
+}
+
+message UpdateOneRequest {
+  string userId = 1;
+  optional string firstName = 2;
+  optional string lastName = 3;
+  optional username = 4; 
+}
+
+message UpdateOneResponse {
+  int32 status = 1;
+  string message = 2;
+}
