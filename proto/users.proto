@@ -4,7 +4,7 @@ package users;
 
 service UsersService {
   rpc FindOne (FindOneRequest) returns (FindOneResponse) {}
-  rpc FindMany () returns (FindManyResponse) {}
+  rpc FindMany (FindManyRequest) returns (FindManyResponse) {}
   rpc UpdateOne (UpdateOneRequest) returns (UpdateOneResponse) {}
 }
 
@@ -22,6 +22,8 @@ message FindOneResponse {
   string message = 7;
 }
 
+message FindManyRequest {}
+
 message FindManyResponse {
   int32 status = 1;
   string message = 2;
@@ -32,7 +34,7 @@ message UpdateOneRequest {
   string userId = 1;
   optional string firstName = 2;
   optional string lastName = 3;
-  optional username = 4; 
+  optional string username = 4; 
 }
 
 message UpdateOneResponse {
