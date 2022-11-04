@@ -8,7 +8,7 @@ service AuthService {
   rpc ValidateToken (TokenDto) returns (ValidateTokenResponse) {}
 }
 
-message SignInDto {
+message SignInRequest {
   string email = 1;
   string password = 2;
 }
@@ -24,7 +24,7 @@ message SignInResponse {
   Tokens tokens = 3;
 }
 
-message SignUpDto {
+message SignUpRequest {
   string email = 1;
   string password = 2;
 }
@@ -35,7 +35,7 @@ message SignUpResponse {
   Tokens tokens = 3;
 }
 
-message TokenDto {
+message ValidateTokenRequest {
   string token = 1;
 }
 
