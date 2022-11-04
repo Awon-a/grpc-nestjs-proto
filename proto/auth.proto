@@ -3,9 +3,9 @@ syntax = "proto3";
 package auth;
 
 service AuthService {
-  rpc SignIn (SignInDto) returns (SignInResponse) {}
-  rpc SignUp (SignUpDto) returns (SignUpResponse) {}
-  rpc ValidateToken (TokenDto) returns (ValidateTokenResponse) {}
+  rpc SignIn (SignInRequest) returns (SignInResponse) {}
+  rpc SignUp (SignUpRequest) returns (SignUpResponse) {}
+  rpc ValidateToken (ValidateTokenRequest) returns (ValidateTokenResponse) {}
 }
 
 message SignInRequest {
